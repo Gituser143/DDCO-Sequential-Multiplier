@@ -2,12 +2,11 @@ module full_adder(a,b,cin,sum,cout);
 	input a,b,cin;
 	output sum,cout;
 	wire s1,c1,c2,c3;
-	xor(s1,a,b);
-	xor(sum,cin,s1);
-	and(c1,a,b);
-	and(c2,b,cin);
-	and(c3,a,cin);
-	or(cout,c1,c2,c3);
+	xor3 z1(sum,a,b,cin);
+	and2 z3(c1,a,b);
+	and2 z4(c2,b,cin);
+	and2 z5(c3,a,cin);
+	or3 z6(cout,c1,c2,c3);
 endmodule
 
 
