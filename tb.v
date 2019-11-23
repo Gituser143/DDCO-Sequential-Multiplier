@@ -4,7 +4,7 @@ wire signed [32:0] z;
 reg signed [15:0] a,b;
 
 
-boothmul my_booth(.a(a),.b(b),.c(z));
+multiplier my_mul(.a(a),.b(b),.c(z));
 
 initial begin $dumpfile("tb_mul.vcd"); $dumpvars(0,tb); end
 

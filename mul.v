@@ -51,13 +51,13 @@ module full_adder_16(input wire[15:0] multiplicand, sum_in, input wire cin, outp
 endmodule		
 
 	
-module multiplier(input wire [15:0] multiplicand, multiplier, output wire[32:0] product);
+module multiplier(input wire [15:0] multiplicand, multiplier, output wire [32:0] product);
 	wire [15:0] mul2; //mul2 is output of adder
-	assign prouct [15:0] = multiplier;
+	assign product [15:0] = multiplier;
 	
 	and16 an0(multiplicand, product[0], mul2);
 	full_adder_16 x0(mul2, 16'b0000000000000000, product[32], product[31:15], product[32]);
-	product >> 1;
+	product = product >> 1;
 	
 	and16 an1(multiplicand, product[0], mul2);
 	full_adder_16 x1(mul2, product[31:15], product[32], product[31:15], product[32]);
