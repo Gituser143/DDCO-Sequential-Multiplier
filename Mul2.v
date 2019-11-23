@@ -1,14 +1,15 @@
 module mul(input wire [15:0] multiplicand, multiplier, output reg [31:0] product);
 	//input wire [15:0] multiplicand, multiplier;
 	//output reg [31:0] product;
-	wire [31:0] temp;
+	wire [31:0] temp,tmp;
+	assign tmp ={16'b0000000000000000,16'b0000000000000000};
 	//product=32'b00000000000000000000000000000000;
 	//reg [31:0] temp0,temp1,temp2,temp3,temp4,temp5,temp6,temp7,temp8;
-	assign temp={16'b0000000000000000,16'b0000000000000010};
+	assign temp={16'b0000000000000000,multiplicand};
 	initial begin
-	product=temp;
-	product+=temp;
-	/*
+		product=tmp;
+	//product+=temp;
+	
 	if(multiplier[0])
 		product+=temp;
 	if(multiplier[1])
@@ -43,6 +44,6 @@ module mul(input wire [15:0] multiplicand, multiplier, output reg [31:0] product
 		product+=temp<<15;
 	end
 		
-	*/
-	end	
+
+	
 endmodule

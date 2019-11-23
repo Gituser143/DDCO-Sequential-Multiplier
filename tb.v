@@ -1,7 +1,7 @@
 module tb;
 wire [31:0] product;
 reg [15:0] multiplicand,multiplier;
-mul my_mul(.multiplicand(multiplicand),.multiplier(multiplier),.product(product));
+mul my_mul(.multiplicand(16'b0000000010000010),.multiplier(16'b0000000000000010),.product(product));
 
 //multiplier my_mul(a, b, z);
 //shift my_shift(z);
@@ -23,4 +23,5 @@ initial begin
 	#10
 	$finish;
 end
+
 endmodule
