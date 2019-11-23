@@ -1,6 +1,6 @@
 module full_adder(a,b,cin,sum,cout);
-	input a,b,cin;
-	output sum,cout;
+	input wire a,b,cin;
+	output wire sum,cout;
 	wire s1,c1,c2,c3;
 	xor3 z1(sum,a,b,cin);
 	and2 z3(c1,a,b);
@@ -10,7 +10,7 @@ module full_adder(a,b,cin,sum,cout);
 endmodule
 
 
-module and16(input wire [15:0] multiplicand, input wire x, output wire [15:0] mul2)
+module and16(input wire [15:0] multiplicand, input wire x, output wire [15:0] mul2);
 	and2 a0(x, multiplicand[0], mul2[0]);
 	and2 a1(x, multiplicand[1], mul2[1]);
 	and2 a2(x, multiplicand[2], mul2[2]);
@@ -30,7 +30,7 @@ module and16(input wire [15:0] multiplicand, input wire x, output wire [15:0] mu
 endmodule
 
 
-module full_adder_16(input wire[15:0] multiplicand, sum_in, input wire cin, output wire[15:0] sum_out, output wire carry)
+module full_adder_16(input wire[15:0] multiplicand, sum_in, input wire cin, output wire[15:0] sum_out, output wire carry);
 	wire c_out[14:0];
 	full_adder(multiplicand[0], sum_in[0], cin, sum_out[0],c_out[0]);
 	full_adder(multiplicand[1], sum_in[1], c_out[0], sum_out[1],c_out[1]);
@@ -51,7 +51,7 @@ module full_adder_16(input wire[15:0] multiplicand, sum_in, input wire cin, outp
 endmodule		
 
 	
-module multiplier(input wire [15:0] multiplicand, multiplier, output wire[32:0] product)
+module multiplier(input wire [15:0] multiplicand, multiplier, output wire[32:0] product);
 	wire [15:0] mul2; //mul2 is output of adder
 	assign prouct [15:0] = multiplier;
 	
