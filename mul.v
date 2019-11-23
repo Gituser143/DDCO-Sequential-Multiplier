@@ -51,72 +51,72 @@ module full_adder_16(input wire[15:0] multiplicand, sum_in, input wire cin, outp
 endmodule		
 
 	
-module multiplier(input wire [15:0] multiplicand, multiplier, output wire [32:0] product);
+module multiplier(input wire [15:0] multiplicand, multiplier, output reg [32:0] product);
 	wire [15:0] mul2; //mul2 is output of adder
 	assign product [15:0] = multiplier;
 	
 	and16 an0(multiplicand, product[0], mul2);
 	full_adder_16 x0(mul2, 16'b0000000000000000, product[32], product[31:15], product[32]);
-	product = product >> 1;
+	assign product = product >> 1;
 	
 	and16 an1(multiplicand, product[0], mul2);
 	full_adder_16 x1(mul2, product[31:15], product[32], product[31:15], product[32]);
-	product >> 1;
+	assign product = product >> 1;
 	
 	and16 an2(multiplicand, product[0], mul2);
 	full_adder_16 x2(mul2, product[31:15], product[32], product[31:15], product[32]);
-	product >> 1;
+	assign product = product >> 1;
 	
 	and16 an3(multiplicand, product[0], mul2);
 	full_adder_16 x3(mul2, product[31:15], product[32], product[31:15], product[32]);
-	product >> 1;
+	assign product = product >> 1;
 	
 	and16 an4(multiplicand, product[0], mul2);
 	full_adder_16 x4(mul2, product[31:15], product[32], product[31:15], product[32]);
-	product >> 1;
+	assign product = product >> 1;
 	
 	and16 an5(multiplicand, product[0], mul2);
 	full_adder_16 x5(mul2, product[31:15], product[32], product[31:15], product[32]);
-	product >> 1;
+	assign product = product >> 1;
 	
 	and16 an6(multiplicand, product[0], mul2);
 	full_adder_16 x6(mul2, product[31:15], product[32], product[31:15], product[32]);
-	product >> 1;
+	assign product = product >> 1;
 	
 	and16 an7(multiplicand, product[0], mul2);
 	full_adder_16 x7(mul2, product[31:15], product[32], product[31:15], product[32]);
-	product >> 1;
+	assign product = product >> 1;
 	
 	and16 an8(multiplicand, product[0], mul2);
 	full_adder_16 x8(mul2, product[31:15], product[32], product[31:15], product[32]);
-	product >> 1;
+	assign product = product >> 1;
 	
 	and16 an9(multiplicand, product[0], mul2);
 	full_adder_16 x9(mul2, product[31:15], product[32], product[31:15], product[32]);
-	product >> 1;
+	assign product = product >> 1;
 	
 	and16 an10(multiplicand, product[0], mul2);
 	full_adder_16 x10(mul2, product[31:15], product[32], product[31:15], product[32]);
-	product >> 1;
+	assign product = product >> 1;
 	
 	and16 an11(multiplicand, product[0], mul2);
 	full_adder_16 x11(mul2, product[31:15], product[32], product[31:15], product[32]);
-	product >> 1;
+	assign product = product >> 1;
 	
 	and16 an12(multiplicand, product[0], mul2);
 	full_adder_16 x12(mul2, product[31:15], product[32], product[31:15], product[32]);
-	product >> 1;
+	assign product = product >> 1;
 	
 	and16 an13(multiplicand, product[0], mul2);
 	full_adder_16 x13(mul2, product[31:15], product[32], product[31:15], product[32]);
-	product >> 1;
+	assign product = product >> 1;
 	
 	and16 an14(multiplicand, product[0], mul2);
 	full_adder_16 x14(mul2, product[31:15], product[32], product[31:15], product[32]);
-	product >> 1;
+	assign product = product >> 1;
 	
 	and16 an15(multiplicand, product[0], mul2);
 	full_adder_16 x15(mul2, product[31:15], product[32], product[31:15], product[32]);
-	product >> 1;
+	assign product = product >> 1;
 	
 endmodule
