@@ -1,24 +1,26 @@
 module tb;
-reg [32:0] z;
-wire [15:0] a,b;
+wire [31:0] product;
+reg [15:0] multiplicand,multiplier;
+mul my_mul(.multiplicand(multiplicand),.multiplier(multiplier),.product(product));
 
-
-multiplier my_mul(a, b, z);
+//multiplier my_mul(a, b, z);
+//shift my_shift(z);
 
 initial begin $dumpfile("tb_mul.vcd"); $dumpvars(0,tb); end
 
-initial
-begin
-$monitor($time,"     ",a," *",b," = ", z);
-
-	a = 16'b0000000011110000;
-	b = 16'b0000000000000001;
-
+initial begin
+//begin $monitor(a," *",b," = ", z);
+	$monitor(multiplicand,multiplier,product);
+	
+	multiplicand = 16'b0000000010000010;	
+	multiplier = 16'b0000000000000001;
+	
 	#10
 
-	a = 16'b0000000010010101;
-	b = 16'b0000000000000001;
+	multiplicand = 16'b0000000000000011;
+	multiplier = 16'b0000000000000001;
 
 	#10
+	$finish;
 end
 endmodule
