@@ -1,26 +1,24 @@
 module tb;
-wire [31:0] product;
+output wire [31:0] product;
 reg [15:0] multiplicand,multiplier;
-mul my_mul(.multiplicand(16'b0000000010000010),.multiplier(16'b0000000000000010),.product(product));
-
-//multiplier my_mul(a, b, z);
-//shift my_shift(z);
-
+mul_new my_mul(.multiplicand(16'b0000000010000010),.multiplier(16'b0000000000000011),.product(product));
+//mul my_mul(.multiplicand(multiplicand),.multiplier(multiplier),.product(product)); //This doesn't work, the values are not being sent to module
+//mul_new my_mul(.multiplicand(multiplicand),.multiplier(multiplier),.product(product)); // Same issue for this too
 initial begin $dumpfile("tb_mul.vcd"); $dumpvars(0,tb); end
 
 initial begin
-//begin $monitor(a," *",b," = ", z);
-	$monitor(multiplicand,multiplier,product);
 	
+	$monitor(multiplicand,multiplier,product);
 	multiplicand = 16'b0000000010000010;	
 	multiplier = 16'b0000000000000001;
 	
 	#10
 
 	multiplicand = 16'b0000000000000011;
-	multiplier = 16'b0000000000000001;
+	multiplier = 16'b0000000000000010;
 
 	#10
+	
 	$finish;
 end
 

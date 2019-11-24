@@ -47,3 +47,148 @@ module mul(input wire [15:0] multiplicand, multiplier, output reg [31:0] product
 
 	
 endmodule
+
+
+module mul_new(input wire [15:0] multiplicand, multiplier, output reg [31:0] product);
+	//input wire [15:0] multiplicand, multiplier;
+	//output reg [31:0] product;
+	wire [31:0] temp,tmp;
+	assign tmp ={16'b0000000000000000,16'b0000000000000000};
+	//product=32'b00000000000000000000000000000000;
+	//reg [31:0] temp0,temp1,temp2,temp3,temp4,temp5,temp6,temp7,temp8;
+	assign temp={multiplicand,16'b0000000000000000};
+	initial begin
+		product=tmp;
+	//product+=temp;
+	
+	if(multiplier[0])
+		begin
+		product+=temp;
+		product=product>>1;
+		end
+	else
+		product=product>>1;
+	
+	if(multiplier[1])
+		begin
+		product+=temp;
+		product=product>>1;
+		end
+	else
+		product=product>>1;
+	
+	if(multiplier[2])
+		begin
+		product+=temp;
+		product=product>>1;
+		end
+	else
+		product=product>>1;
+	
+	if(multiplier[3])
+		begin
+		product+=temp;
+		product=product>>1;
+		end
+	else
+		product=product>>1;
+	
+	if(multiplier[4])
+		begin
+		product+=temp;
+		product=product>>1;
+		end
+	else
+		product=product>>1;
+	
+	if(multiplier[5])
+		begin
+		product+=temp;
+		product=product>>1;
+		end
+	else
+		product=product>>1;
+	
+	if(multiplier[6])
+		begin
+		product+=temp;
+		product=product>>1;
+		end
+	else
+		product=product>>1;
+	
+	if(multiplier[7])
+		begin
+		product+=temp;
+		product=product>>1;
+		end
+	else
+		product=product>>1;
+	
+	if(multiplier[8])
+		begin
+		product+=temp;
+		product=product>>1;
+		end
+	else
+		product=product>>1;
+	
+	if(multiplier[9])
+		begin
+		product+=temp;
+		product=product>>1;
+		end
+	else
+		product=product>>1;
+	
+	if(multiplier[10])
+		begin
+		product+=temp;
+		product=product>>1;
+		end
+	else
+		product=product>>1;
+	
+	if(multiplier[11])
+		begin
+		product+=temp;
+		product=product>>1;
+		end
+	else
+		product=product>>1;
+	
+	if(multiplier[12])
+		begin
+		product+=temp;
+		product=product>>1;
+		end
+	else
+		product=product>>1;
+	
+	if(multiplier[13])
+		begin
+		product+=temp;
+		product=product>>1;
+		end
+	else
+		product=product>>1;
+	
+	if(multiplier[14])
+		begin
+		product+=temp;
+		product=product>>1;
+		end
+	else
+		product=product>>1;
+	
+	if(multiplier[15])
+		begin
+		product+=temp;
+		product=product>>1;
+		end
+	else
+		product=product>>1;
+	
+	end
+			
+endmodule
