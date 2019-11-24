@@ -53,7 +53,7 @@ module mul_new(input wire [15:0] multiplicand, multiplier, output reg [31:0] pro
 	//input wire [15:0] multiplicand, multiplier;
 	//output reg [31:0] product;
 	wire [31:0] temp,tmp;
-	assign tmp ={16'b0000000000000000,16'b0000000000000000};
+	assign tmp ={16'b0000000000000000,multiplier};
 	//product=32'b00000000000000000000000000000000;
 	//reg [31:0] temp0,temp1,temp2,temp3,temp4,temp5,temp6,temp7,temp8;
 	assign temp={multiplicand,16'b0000000000000000};
@@ -61,7 +61,7 @@ module mul_new(input wire [15:0] multiplicand, multiplier, output reg [31:0] pro
 		product=tmp;
 	//product+=temp;
 	
-	if(multiplier[0])
+	if(product[0])
 		begin
 		product+=temp;
 		product=product>>1;
@@ -69,7 +69,7 @@ module mul_new(input wire [15:0] multiplicand, multiplier, output reg [31:0] pro
 	else
 		product=product>>1;
 	
-	if(multiplier[1])
+	if(product[0])
 		begin
 		product+=temp;
 		product=product>>1;
@@ -77,7 +77,7 @@ module mul_new(input wire [15:0] multiplicand, multiplier, output reg [31:0] pro
 	else
 		product=product>>1;
 	
-	if(multiplier[2])
+	if(product[0])
 		begin
 		product+=temp;
 		product=product>>1;
@@ -85,7 +85,7 @@ module mul_new(input wire [15:0] multiplicand, multiplier, output reg [31:0] pro
 	else
 		product=product>>1;
 	
-	if(multiplier[3])
+	if(product[0])
 		begin
 		product+=temp;
 		product=product>>1;
@@ -93,7 +93,7 @@ module mul_new(input wire [15:0] multiplicand, multiplier, output reg [31:0] pro
 	else
 		product=product>>1;
 	
-	if(multiplier[4])
+	if(product[0])
 		begin
 		product+=temp;
 		product=product>>1;
@@ -101,7 +101,7 @@ module mul_new(input wire [15:0] multiplicand, multiplier, output reg [31:0] pro
 	else
 		product=product>>1;
 	
-	if(multiplier[5])
+	if(product[0])
 		begin
 		product+=temp;
 		product=product>>1;
@@ -109,7 +109,7 @@ module mul_new(input wire [15:0] multiplicand, multiplier, output reg [31:0] pro
 	else
 		product=product>>1;
 	
-	if(multiplier[6])
+	if(product[0])
 		begin
 		product+=temp;
 		product=product>>1;
@@ -117,7 +117,7 @@ module mul_new(input wire [15:0] multiplicand, multiplier, output reg [31:0] pro
 	else
 		product=product>>1;
 	
-	if(multiplier[7])
+	if(product[0])
 		begin
 		product+=temp;
 		product=product>>1;
@@ -125,7 +125,7 @@ module mul_new(input wire [15:0] multiplicand, multiplier, output reg [31:0] pro
 	else
 		product=product>>1;
 	
-	if(multiplier[8])
+	if(product[0])
 		begin
 		product+=temp;
 		product=product>>1;
@@ -133,7 +133,7 @@ module mul_new(input wire [15:0] multiplicand, multiplier, output reg [31:0] pro
 	else
 		product=product>>1;
 	
-	if(multiplier[9])
+	if(product[0])
 		begin
 		product+=temp;
 		product=product>>1;
@@ -141,7 +141,7 @@ module mul_new(input wire [15:0] multiplicand, multiplier, output reg [31:0] pro
 	else
 		product=product>>1;
 	
-	if(multiplier[10])
+	if(product[0])
 		begin
 		product+=temp;
 		product=product>>1;
@@ -149,7 +149,7 @@ module mul_new(input wire [15:0] multiplicand, multiplier, output reg [31:0] pro
 	else
 		product=product>>1;
 	
-	if(multiplier[11])
+	if(product[0])
 		begin
 		product+=temp;
 		product=product>>1;
@@ -157,7 +157,7 @@ module mul_new(input wire [15:0] multiplicand, multiplier, output reg [31:0] pro
 	else
 		product=product>>1;
 	
-	if(multiplier[12])
+	if(product[0])
 		begin
 		product+=temp;
 		product=product>>1;
@@ -165,7 +165,7 @@ module mul_new(input wire [15:0] multiplicand, multiplier, output reg [31:0] pro
 	else
 		product=product>>1;
 	
-	if(multiplier[13])
+	if(product[0])
 		begin
 		product+=temp;
 		product=product>>1;
@@ -173,7 +173,7 @@ module mul_new(input wire [15:0] multiplicand, multiplier, output reg [31:0] pro
 	else
 		product=product>>1;
 	
-	if(multiplier[14])
+	if(product[0])
 		begin
 		product+=temp;
 		product=product>>1;
@@ -181,7 +181,7 @@ module mul_new(input wire [15:0] multiplicand, multiplier, output reg [31:0] pro
 	else
 		product=product>>1;
 	
-	if(multiplier[15])
+	if(product[0])
 		begin
 		product+=temp;
 		product=product>>1;
